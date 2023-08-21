@@ -1,2 +1,2 @@
 # js-kit
-A comprehensive kit of JavaScript modules for empowering individual coding projects.
+A collection of JavaScript code snippets and modules for enhancing personal coding projects.

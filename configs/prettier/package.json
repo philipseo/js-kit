@@ -1,0 +1,24 @@
+{
+  "name": "@philipseo/prettier",
+  "version": "0.0.0",
+  "exports": {
+    "./base": "./base.js",
+    "./package.json": "./package.json"
+  },
+  "packageManager": "^pnpm@7.0.0",
+  "scripts": {
+    "eslint": "eslint .",
+    "eslint:fix": "pnpm eslint --fix",
+    "prettier": "prettier --ignore-path ../../.prettierignore --check .",
+    "prettier:fix": "pnpm run prettier --write",
+    "lint": "pnpm eslint && pnpm prettier",
+    "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
+    "release": "pnpm publish --no-git-checks --access private"
+  },
+  "dependencies": {
+    "prettier": "^3.0.2"
+  },
+  "devDependencies": {
+    "@philipseo/eslint-config": "workspace:*"
+  }
+}
