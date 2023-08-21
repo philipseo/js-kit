@@ -16,7 +16,7 @@
     "release": "pnpm publish --no-git-checks --access private"
   },
   "devDependencies": {
-    "prettier": "^3.0.2",
-    "eslint": "^8.47.0"
+    "prettier": "3.0.2",
+    "eslint": "8.47.0"
   }
 }
