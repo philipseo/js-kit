@@ -1,0 +1,32 @@
+### OS ###
+.DS_*
+
+### IDE ###
+### Jetbrains ###
+.idea
+
+### Dependencies ###
+node_modules/
+pnpm-lock.yaml
+
+### Husky ###
+.husky
+
+### Testing ###
+coverage/
+
+### Outputs ###
+dist/
+build/
+
+### Documents ###
+apps/documents/.docusaurus
+apps/documents/.cache-loader
+### Documents - GenerateFiles ###
+apps/documents/docs
+
+### Turbo ###
+.turbo
+
+### Etc ###
+*.log

@@ -1,7 +1,12 @@
 {
   "name": "@philipseo/js-kit",
   "version": "0.0.0",
-  "packageManager": "^pnpm@7.0.0",
+  "license": "MIT",
+  "author": "Philip Seo <hbnb7894@gmail.com>",
+  "engins": {
+    "node": "18.x",
+    "pnpm": "8.x"
+  },
   "scripts": {
     "prepare": "husky install",
     "lint-staged": "lint-staged",
@@ -19,6 +24,9 @@
     "release": "turbo run release"
   },
   "devDependencies": {
+    "@philipseo/eslint-config": "workspace:*",
+    "@philipseo/prettier": "workspace:*",
+    "@philipseo/lint-staged": "workspace:*",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "turbo": "^1.10.12"

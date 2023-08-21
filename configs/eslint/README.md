@@ -1,9 +1,11 @@
 # @philipseo/eslint-config
 
 ## Includes
+
 - base.js
 
 ## Installation
+
 ```
 # npm
 npm install -D @philipseo/eslint-config

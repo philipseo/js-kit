@@ -1,11 +1,11 @@
 {
   "name": "@philipseo/prettier",
   "version": "0.0.0",
+  "license": "MIT",
+  "author": "Philip Seo <hbnb7894@gmail.com>",
   "exports": {
-    "./base": "./base.js",
-    "./package.json": "./package.json"
+    "./base": "./base.js"
   },
-  "packageManager": "^pnpm@7.0.0",
   "scripts": {
     "eslint": "eslint .",
     "eslint:fix": "pnpm eslint --fix",
@@ -19,6 +19,6 @@
     "prettier": "^3.0.2"
   },
   "devDependencies": {
-    "@philipseo/eslint-config": "workspace:*"
+    "eslint": "^8.47.0"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@philipseo/eslint-config",
+  "name": "@philipseo/lint-staged",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
@@ -15,13 +15,8 @@
     "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
     "release": "pnpm publish --no-git-checks --access private"
   },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "eslint": "^8.47.0",
-    "eslint-config-prettier": "^9.0.0"
-  },
   "devDependencies": {
-    "prettier": "^3.0.2"
+    "prettier": "^3.0.2",
+    "eslint": "^8.47.0"
   }
 }
