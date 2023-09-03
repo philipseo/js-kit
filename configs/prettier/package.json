@@ -10,6 +10,9 @@
     "directory": "configs/prettier"
   },
   "main": "./index.js",
+  "files": [
+    "index.js"
+  ],
   "exports": {
     ".": "./index.js"
   },

@@ -10,6 +10,10 @@
     "directory": "configs/eslint-config"
   },
   "main": "./index.js",
+  "files": [
+    "src",
+    "index.js"
+  ],
   "exports": {
     ".": {
       "require": "./index.js"
