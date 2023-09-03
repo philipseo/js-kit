@@ -2,7 +2,7 @@
 
 ## Includes
 
-- base.js
+- index.js
 
 ## Installation
 

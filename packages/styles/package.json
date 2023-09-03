@@ -1,32 +1,29 @@
 {
-  "name": "@philipseo/lint-staged",
+  "name": "@philipseo/styles",
   "version": "0.0.3",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
+  "main": "src/reset.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/philipseo/js-kit",
-    "directory": "configs/lint-staged"
+    "directory": "packages/styles"
   },
-  "main": "./index.js",
   "files": [
-    "./index.js"
+    "src"
   ],
   "exports": {
-    ".": "./index.js"
+    "./reset.css": "./src/reset.css"
   },
   "scripts": {
-    "eslint": "eslint .",
-    "eslint:fix": "pnpm eslint --fix",
     "prettier": "prettier --ignore-path ../../.prettierignore --check .",
     "prettier:fix": "pnpm run prettier --write",
-    "lint": "pnpm eslint && pnpm prettier",
-    "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
+    "lint": "pnpm prettier",
+    "lint:fix": "pnpm prettier:fix",
     "release": "pnpm publish --no-git-checks --access public"
   },
   "devDependencies": {
-    "prettier": "3.0.2",
-    "eslint": "8.47.0"
+    "@philipseo/prettier": "workspace:*"
   }
 }
