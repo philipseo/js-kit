@@ -27,3 +27,4 @@ apps/documents/docs
 
 ### Etc ###
 *.log
+.npmrc
