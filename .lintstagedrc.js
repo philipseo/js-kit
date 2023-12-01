@@ -1,3 +1,3 @@
-const baseConfig = require('@philipseo/lint-staged');
+const baseConfig = require('@philipseo/lint-staged-config');
 
 module.exports = baseConfig;

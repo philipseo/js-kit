@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['../eslint/src/base'],
+  extends: ['@philipseo/eslint-config-jskit'],
 };

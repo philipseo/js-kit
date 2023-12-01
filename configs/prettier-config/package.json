@@ -1,5 +1,5 @@
 {
-  "name": "@philipseo/eslint-config",
+  "name": "@philipseo/prettier-config",
   "version": "0.0.3",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
@@ -7,24 +7,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/philipseo/js-kit",
-    "directory": "configs/eslint-config"
+    "directory": "configs/prettier-config"
   },
   "main": "./index.js",
   "files": [
-    "src",
     "index.js"
   ],
-  "exports": {
-    ".": {
-      "require": "./index.js"
-    },
-    "./base": {
-      "require": "./src/base.js"
-    },
-    "./next": {
-      "require": "./src/next.js"
-    }
-  },
   "scripts": {
     "eslint": "eslint .",
     "eslint:fix": "pnpm eslint --fix",
@@ -35,13 +23,12 @@
     "release": "pnpm publish --no-git-checks --access public"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "6.4.0",
-    "@typescript-eslint/parser": "6.4.0",
-    "eslint": "8.47.0",
-    "eslint-config-next": "^13.4.19",
-    "eslint-config-prettier": "9.0.0"
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0"
   },
   "devDependencies": {
-    "prettier": "3.0.2"
+    "@philipseo/eslint-config-jskit": "*"
+  },
+  "peerDependencies": {
+    "prettier": "3.1.0"
   }
 }

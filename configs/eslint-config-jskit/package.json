@@ -1,21 +1,20 @@
 {
-  "name": "@philipseo/lint-staged",
-  "version": "0.0.3",
+  "name": "@philipseo/eslint-config-jskit",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
   "repository": {
     "type": "git",
     "url": "https://github.com/philipseo/js-kit",
-    "directory": "configs/lint-staged"
+    "directory": "configs/eslint-config-jskit"
   },
-  "main": "./index.js",
+  "main": "index.js",
   "files": [
-    "./index.js"
+    "index.js",
+    "nextjs.js",
+    "reactjs.js"
   ],
-  "exports": {
-    ".": "./index.js"
-  },
   "scripts": {
     "eslint": "eslint .",
     "eslint:fix": "pnpm eslint --fix",
@@ -25,8 +24,16 @@
     "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
     "release": "pnpm publish --no-git-checks --access public"
   },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "6.13.1",
+    "@typescript-eslint/parser": "6.13.1",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "9.0.0"
+  },
   "devDependencies": {
-    "prettier": "3.0.2",
-    "eslint": "8.47.0"
+    "@philipseo/prettier-config": "*"
+  },
+  "peerDependencies": {
+    "eslint": "8.54.0"
   }
 }

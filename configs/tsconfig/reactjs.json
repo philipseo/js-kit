@@ -1,0 +1,9 @@
+{
+  "extends": "./index.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "resolveJsonModule": true
+  }
+}

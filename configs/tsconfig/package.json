@@ -1,6 +1,6 @@
 {
   "name": "@philipseo/tsconfig",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
@@ -11,12 +11,9 @@
   },
   "files": [
     "./index.json",
-    "./src"
+    "./reactjs.json",
+    "./nextjs.json"
   ],
-  "exports": {
-    "./base": "./src/base.json",
-    "./next": "./src/next.json"
-  },
   "scripts": {
     "eslint": "eslint .",
     "eslint:fix": "pnpm eslint --fix",
@@ -26,11 +23,11 @@
     "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
     "release": "pnpm publish --no-git-checks --access public"
   },
-  "dependencies": {
-    "typescript": "^5.2.2"
-  },
   "devDependencies": {
-    "eslint": "8.47.0",
-    "prettier": "3.0.2"
+    "@philipseo/eslint-config-jskit": "*",
+    "@philipseo/prettier-config": "*"
+  },
+  "peerDependencies": {
+    "typescript": "5.3.2"
   }
 }

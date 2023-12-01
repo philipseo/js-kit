@@ -1,21 +1,18 @@
 {
-  "name": "@philipseo/prettier",
-  "version": "0.0.3",
+  "name": "@philipseo/jest-config",
+  "version": "0.0.0",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
   "repository": {
     "type": "git",
     "url": "https://github.com/philipseo/js-kit",
-    "directory": "configs/prettier"
+    "directory": "configs/jest-config"
   },
   "main": "./index.js",
   "files": [
-    "index.js"
+    "./index.js"
   ],
-  "exports": {
-    ".": "./index.js"
-  },
   "scripts": {
     "eslint": "eslint .",
     "eslint:fix": "pnpm eslint --fix",
@@ -25,10 +22,8 @@
     "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
     "release": "pnpm publish --no-git-checks --access public"
   },
-  "dependencies": {
-    "prettier": "3.0.2"
-  },
   "devDependencies": {
-    "eslint": "8.47.0"
+    "@philipseo/eslint-config-jskit": "*",
+    "@philipseo/prettier-config": "*"
   }
 }
