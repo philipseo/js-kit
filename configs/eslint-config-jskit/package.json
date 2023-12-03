@@ -34,9 +34,6 @@
     "eslint-config-next": "13.4.19",
     "eslint-config-prettier": "9.0.0"
   },
-  "devDependencies": {
-    "@philipseo/prettier-config": "*"
-  },
   "peerDependencies": {
     "eslint": "8.54.0"
   }

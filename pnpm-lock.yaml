@@ -47,19 +47,8 @@ importers:
       eslint-config-prettier:
         specifier: 9.0.0
         version: 9.0.0(eslint@8.54.0)
-    devDependencies:
-      '@philipseo/prettier-config':
-        specifier: '*'
-        version: link:../prettier-config
 
-  configs/jest-config:
-    devDependencies:
-      '@philipseo/eslint-config-jskit':
-        specifier: '*'
-        version: link:../eslint-config-jskit
-      '@philipseo/prettier-config':
-        specifier: '*'
-        version: link:../prettier-config
+  configs/jest-config: {}
 
   configs/lint-staged-config:
     dependencies:
@@ -69,13 +58,6 @@ importers:
       lint-staged:
         specifier: 15.1.0
         version: 15.1.0
-    devDependencies:
-      '@philipseo/eslint-config-jskit':
-        specifier: '*'
-        version: link:../eslint-config-jskit
-      '@philipseo/prettier-config':
-        specifier: '*'
-        version: link:../prettier-config
 
   configs/prettier-config:
     dependencies:
@@ -85,10 +67,6 @@ importers:
       prettier:
         specifier: 3.1.0
         version: 3.1.0
-    devDependencies:
-      '@philipseo/eslint-config-jskit':
-        specifier: '*'
-        version: link:../eslint-config-jskit
 
   configs/stylelint-config:
     dependencies:
@@ -101,26 +79,12 @@ importers:
       stylelint-config-standard:
         specifier: 34.0.0
         version: 34.0.0(stylelint@15.11.0)
-    devDependencies:
-      '@philipseo/eslint-config-jskit':
-        specifier: '*'
-        version: link:../eslint-config-jskit
-      '@philipseo/prettier-config':
-        specifier: '*'
-        version: link:../prettier-config
 
   configs/tsconfig:
     dependencies:
       typescript:
         specifier: 5.3.2
         version: 5.3.2
-    devDependencies:
-      '@philipseo/eslint-config-jskit':
-        specifier: '*'
-        version: link:../eslint-config-jskit
-      '@philipseo/prettier-config':
-        specifier: '*'
-        version: link:../prettier-config
 
   packages/styles:
     dependencies:
@@ -130,16 +94,6 @@ importers:
       typescript:
         specifier: 5.3.2
         version: 5.3.2
-    devDependencies:
-      '@philipseo/eslint-config-jskit':
-        specifier: '*'
-        version: link:../../configs/eslint-config-jskit
-      '@philipseo/prettier-config':
-        specifier: '*'
-        version: link:../../configs/prettier-config
-      '@philipseo/stylelint-config':
-        specifier: '*'
-        version: link:../../configs/stylelint-config
 
 packages:
 

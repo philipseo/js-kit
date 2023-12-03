@@ -21,9 +21,5 @@
     "lint": "pnpm eslint && pnpm prettier",
     "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
     "release": "pnpm publish --no-git-checks --access public"
-  },
-  "devDependencies": {
-    "@philipseo/eslint-config-jskit": "*",
-    "@philipseo/prettier-config": "*"
   }
 }
