@@ -6,7 +6,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": "./",
     "outDir": "dist",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,

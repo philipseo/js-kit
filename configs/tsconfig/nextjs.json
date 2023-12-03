@@ -1,10 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./index.json",
+  "extends": "./reactjs.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "incremental": true,
-    "resolveJsonModule": true
+    "incremental": true
   },
   "exclude": ["node_modules"]
 }

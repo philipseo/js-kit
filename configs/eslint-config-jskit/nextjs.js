@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['./react.js', 'next/core-web-vitals'],
+  extends: ['./reactjs.js', 'next/core-web-vitals'],
 };

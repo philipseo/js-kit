@@ -15,15 +15,35 @@ yarn add -D @philipseo/tsconfig
 pnpm add -D @philipseo/tsconfig
 ```
 
-## Usage
+## Usage tsconfig.json
 
 ```
 # base
-"extends": "@philipseo/tsconfig"
+{
+  "extends": "@philipseo/tsconfig"
+}
 
 # reactjs.js
-"extends": "@philipseo/tsconfig/reactjs"
+{
+  "extends": "@philipseo/tsconfig/reactjs"
+}
 
 # nextjs.js
-"extends": "@philipseo/tsconfig/nextjs"
+{
+  "extends": "@philipseo/tsconfig/nextjs",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.js",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ]
+}
 ```

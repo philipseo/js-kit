@@ -15,15 +15,21 @@ yarn add -D @philipseo/eslint-config-jskit
 pnpm add -D @philipseo/eslint-config-jskit
 ```
 
-## Usage
+## Usage .eslintrc.js
 
 ```
 # base
-extends: ['@philipseo/eslint-config-jskit']
+module.exports = {
+  extends: ['@philipseo/eslint-config-jskit']
+}
 
 # reactjs.js
-extends: ['@philipseo/eslint-config-jskit/react']
+module.exports = {
+  extends: ['@philipseo/eslint-config-jskit/react']
+}
 
 # nextjs.js
-extends: ['@philipseo/eslint-config-jskit/next']
+module.exports = {
+  extends: ['@philipseo/eslint-config-jskit/next']
+}
 ```

@@ -12,6 +12,7 @@
     "lint-staged": "lint-staged",
     "build": "turbo run build --no-daemon",
     "tsc": "turbo run tsc",
+    "stylelint": "turbo run stylelint",
     "eslint": "turbo run eslint",
     "eslint:fix": "turbo run eslint:fix",
     "prettier": "turbo run prettier",
@@ -27,6 +28,7 @@
     "@philipseo/eslint-config-jskit": "workspace:*",
     "@philipseo/lint-staged-config": "workspace:*",
     "@philipseo/prettier-config": "workspace:*",
+    "@philipseo/stylelint-config": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "15.1.0",
     "turbo": "1.10.16"

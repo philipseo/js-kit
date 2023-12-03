@@ -1,15 +1,15 @@
 {
-  "name": "@philipseo/lint-staged-config",
-  "version": "0.0.6",
+  "name": "@philipseo/stylelint-config",
+  "version": "0.0.0",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
   "repository": {
     "type": "git",
     "url": "https://github.com/philipseo/js-kit",
-    "directory": "configs/lint-staged-config"
+    "directory": "configs/stylelint-config"
   },
-  "main": "./index.js",
+  "main": "index.js",
   "files": [
     "./index.js"
   ],
@@ -31,7 +31,8 @@
     "@philipseo/prettier-config": "*"
   },
   "peerDependencies": {
-    "husky": "8.0.3",
-    "lint-staged": "15.1.0"
+    "stylelint": "15.11.0",
+    "stylelint-config-standard": "34.0.0",
+    "postcss-lit": "1.1.0"
   }
 }

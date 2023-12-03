@@ -1,6 +1,5 @@
 /** @type {import("prettier").Config} */
 const config = {
-  plugins: ['@trivago/prettier-plugin-sort-imports'],
   useTabs: false,
   semi: true,
   singleQuote: true,
@@ -9,7 +8,7 @@ const config = {
   trailingComma: 'all',
   endOfLine: 'lf',
   arrowParens: 'always',
-  importOrder: ['^#/(.*)$', '^[./]'],
+  importOrder: ['<THIRD_PARTY_MODULES>', '^#/(.*)$', '^[./]'],
   importOrderSeparation: true,
 };
 

@@ -13,7 +13,7 @@ yarn add -D @philipseo/lint-staged-config
 pnpm add -D @philipseo/lint-staged-config
 ```
 
-## Usage
+## Usage .lintstagedrc.js
 
 ```
 const config = require('@philipseo/prettier-config');

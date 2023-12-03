@@ -1,0 +1,9 @@
+### Dependencies ###
+node_modeuls
+pnpm-*.yaml
+
+### Documentations ###
+*.md
+
+### ETC ###
+*.json
