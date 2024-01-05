@@ -31,7 +31,7 @@
   },
   "scripts": {
     "eslint": "eslint . --ignore-path ../../.eslintignore",
-    "eslint:fix": "eslint --fix --ignore-path ../../.eslintignore",
+    "eslint:fix": "eslint . --fix --ignore-path ../../.eslintignore",
     "prettier": "prettier . --ignore-path ../../.prettierignore --check ",
     "prettier:fix": "prettier . --write --ignore-path ../../.prettierignore",
     "lint": "pnpm eslint && pnpm prettier",
