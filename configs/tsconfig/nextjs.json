@@ -1,9 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./reactjs.json",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "incremental": true
-  },
-  "exclude": ["node_modules"]
-}

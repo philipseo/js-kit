@@ -1,0 +1,7 @@
+{
+  "extends": "./base.json",
+  "display": "Library",
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}

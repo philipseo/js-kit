@@ -1,0 +1,81 @@
+{
+  "name": "@philipseo/configs",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Philip Seo <hbnb7894@gmail.com>",
+  "homepage": "https://github.com/philipseo/js-kit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philipseo/js-kit",
+    "directory": "configs"
+  },
+  "engins": {
+    "node": "20.x",
+    "pnpm": "8.x"
+  },
+  "files": [
+    "eslint",
+    "jest",
+    "lint-staged",
+    "prettier",
+    "stylelint",
+    "tsconfig"
+  ],
+  "exports": {
+    "./eslint/*": "./eslint/*.js",
+    "./jest/*": "./jest/*.js",
+    "./lint-staged/*": "./lint-staged/*.js",
+    "./prettier/*": "./prettier/*.js",
+    "./stylelint/*": "./stylelint/*.js",
+    "./tsconfig/*": "./tsconfig/*.json"
+  },
+  "scripts": {
+    "eslint": "eslint . --ignore-path ../../.eslintignore",
+    "eslint:fix": "eslint --fix --ignore-path ../../.eslintignore",
+    "prettier": "prettier . --ignore-path ../../.prettierignore --check ",
+    "prettier:fix": "prettier . --write --ignore-path ../../.prettierignore",
+    "lint": "pnpm eslint && pnpm prettier",
+    "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
+    "release": "pnpm publish --no-git-checks --access public"
+  },
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "@typescript-eslint/eslint-plugin": "6.17.0",
+    "@typescript-eslint/parser": "6.17.0",
+    "eslint-config-next": "14.0.4",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-import-resolver-alias": "1.1.2",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "postcss-lit": "1.1.1",
+    "stylelint-config-standard": "36.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.56.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8",
+    "lint-staged": ">= 15",
+    "prettier": ">= 3",
+    "stylelint": ">= 16",
+    "typescript": ">= 5"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "lint-staged": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    },
+    "stylelint": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  }
+}

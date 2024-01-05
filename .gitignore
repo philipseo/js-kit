@@ -1,9 +1,9 @@
 ### OS ###
-.DS_*
+.DS_*/
 
 ### IDE ###
 ### Jetbrains ###
-.idea
+.idea/
 
 ### Dependencies ###
 node_modules/

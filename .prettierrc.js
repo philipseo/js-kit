@@ -1,3 +1,3 @@
-const config = require('@philipseo/prettier-config');
+const baseConfig = require('@philipseo/configs/prettier/base');
 
-module.exports = config;
+module.exports = baseConfig;

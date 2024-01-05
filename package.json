@@ -3,8 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
+  "homepage": "https://github.com/philipseo/js-kit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philipseo/js-kit"
+  },
   "engins": {
-    "node": "18.x",
+    "node": "20.x",
     "pnpm": "8.x"
   },
   "scripts": {
@@ -25,12 +30,10 @@
     "release": "turbo run release"
   },
   "devDependencies": {
-    "@philipseo/eslint-config-jskit": "workspace:*",
-    "@philipseo/lint-staged-config": "workspace:*",
-    "@philipseo/prettier-config": "workspace:*",
-    "@philipseo/stylelint-config": "workspace:*",
+    "@philipseo/configs": "workspace:*",
     "husky": "8.0.3",
-    "lint-staged": "15.1.0",
-    "turbo": "1.10.16"
+    "prettier": "3.1.1",
+    "turbo": "1.11.3",
+    "lint-staged": "15.2.0"
   }
 }

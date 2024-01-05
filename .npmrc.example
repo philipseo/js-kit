@@ -1,0 +1,4 @@
+auto-install-peers=true
+resolution-mode=highest
+dedupe-direct-deps=true
+//registry.npmjs.org/:_authToken=INSERT_YOUR_GITHUB_TOKEN_HERE
