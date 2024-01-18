@@ -1,6 +1,6 @@
 {
   "name": "@philipseo/configs",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
@@ -40,46 +40,21 @@
   },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
-    "@typescript-eslint/eslint-plugin": "6.18.1",
-    "@typescript-eslint/parser": "6.18.1",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "8.0.3",
+    "lint-staged": "15.2.0",
     "postcss-lit": "1.1.1",
-    "stylelint-config-standard": "36.0.0"
-  },
-  "devDependencies": {
-    "eslint": "8.56.0"
-  },
-  "peerDependencies": {
-    "eslint": ">= 8",
-    "husky": ">= 8",
-    "lint-staged": ">= 15",
-    "prettier": ">= 3",
-    "stylelint": ">= 16",
-    "typescript": ">= 5"
-  },
-  "peerDependenciesMeta": {
-    "eslint": {
-      "optional": true
-    },
-    "husky": {
-      "optional": true
-    },
-    "lint-staged": {
-      "optional": true
-    },
-    "prettier": {
-      "optional": true
-    },
-    "stylelint": {
-      "optional": true
-    },
-    "typescript": {
-      "optional": true
-    }
+    "prettier": "3.2.4",
+    "stylelint": "16.1.0",
+    "stylelint-config-standard": "36.0.0",
+    "typescript": "5.3.3"
   }
 }

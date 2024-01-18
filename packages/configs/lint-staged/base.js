@@ -1,4 +1,6 @@
+const prettier = require('./prettier');
+
 module.exports = {
-  '*.{js,jsx,ts,tsx}': ['eslint', 'prettier --check'],
-  '*.{md,mdx,html,json,yml,yaml}': ['prettier --check'],
+  '*.{js,jsx,ts,tsx}': ['eslint'],
+  ...prettier,
 };

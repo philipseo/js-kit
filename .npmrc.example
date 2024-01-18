@@ -1,1 +1,5 @@
+public-hoist-pattern[]=*eslint*
+public-hoist-pattern[]=*prettier*
+public-hoist-pattern[]=husky
+public-hoist-pattern[]=lint-staged
 //registry.npmjs.org/:_authToken=INSERT_YOUR_NPM_TOKEN_HERE
