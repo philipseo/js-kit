@@ -1,6 +1,6 @@
 {
   "name": "@philipseo/scripts",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
@@ -17,14 +17,14 @@
     "dist"
   ],
   "bin": {
-    "create-github-release": "dist/create-github-release/create-github-release.bin.js",
-    "versioning": "dist/versioning/versioning.bin.js"
+    "create-github-release": "./dist/create-github-release/create-github-release.bin.js",
+    "versioning": "./dist/versioning/versioning.bin.js"
   },
   "scripts": {
     "build": "tsup",
     "eslint": "eslint . --ignore-path ../../.eslintignore",
     "eslint:fix": "eslint . --fix --ignore-path ../../.eslintignore",
-    "prettier": "prettier . --ignore-path ../../.prettierignore --check",
+    "prettier": "prettier . --check --ignore-path ../../.prettierignore",
     "prettier:fix": "prettier . --write --ignore-path ../../.prettierignore",
     "lint": "eslint && pnpm prettier",
     "lint:fix": "eslint:fix && pnpm prettier:fix",

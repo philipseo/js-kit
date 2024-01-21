@@ -32,7 +32,7 @@ async function versioning({ token, owner, repo, prNumber }: OctokitProps) {
       });
     }
   } catch (error) {
-    console.error('❗ updatePackageVersion Error: ', error);
+    console.error('❗ versioning Error: ', error);
     throw error;
   }
 }
