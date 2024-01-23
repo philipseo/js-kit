@@ -19,6 +19,6 @@ describe('getVersionType', () => {
   test('❗ Has an error get version type', () => {
     expect(() => {
       getVersionType({ prTitle: '' });
-    }).toThrowError('PR Title is invalid');
+    }).toThrow('PR Title is invalid');
   });
 });

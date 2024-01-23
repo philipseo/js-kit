@@ -1,31 +1,35 @@
 import { Octokit } from '@octokit/rest';
 
-import { OctokitProps } from '#/types/octokit/octokit';
+import { getRootChangelogMd } from '#/bin/create-github-release/utils';
+import type { OctokitProps } from '#/types/octokit/octokit';
+import { getRootPackageJsonVersion } from '#/utils';
 
-interface CreateGithubReleaseProps extends Omit<OctokitProps, 'prNumber'> {
-  newVersion: string;
-  changelogContent: string;
-}
+type CreateGithubReleaseProps = Omit<OctokitProps, 'prNumber'>;
 
 async function createGithubRelease({
-  changelogContent,
-  newVersion,
   token,
   owner,
   repo,
 }: CreateGithubReleaseProps) {
-  const octokit = new Octokit({
-    auth: token,
-  });
+  try {
+    const octokit = new Octokit({
+      auth: token,
+    });
+    const rootChangelogMd = await getRootChangelogMd();
+    const rootPackageJsonVersion = await getRootPackageJsonVersion();
+    const currentVersion = `v${rootPackageJsonVersion}`;
 
-  const version = `v${newVersion}`;
-  await octokit.repos.createRelease({
-    owner,
-    repo,
-    tag_name: version,
-    name: version,
-    body: changelogContent,
-  });
+    await octokit.repos.createRelease({
+      owner,
+      repo,
+      tag_name: currentVersion,
+      name: currentVersion,
+      body: rootChangelogMd,
+    });
+  } catch (error) {
+    console.error('❗ createGithubRelease Error: ', error);
+    throw error;
+  }
 }
 
 export default createGithubRelease;

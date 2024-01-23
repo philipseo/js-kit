@@ -1,10 +1,11 @@
 import { getNewVersion, VERSION_TYPE } from '#/bin/versioning/utils';
 import * as getPackageJson from '#/bin/versioning/utils/get-package-json';
+import { MOCK_ERROR_MESSAGE, MOCK_PACKAGE_JSON } from '#/constants';
 
 jest.mock('#/bin/versioning/utils/get-package-json', () => {
   return {
     getPackageJson: jest.fn().mockImplementation(() => {
-      return { version: '1.2.3' };
+      return MOCK_PACKAGE_JSON;
     }),
   };
 });
@@ -29,11 +30,11 @@ describe('getNewVersion', () => {
     jest
       .spyOn(getPackageJson, 'getPackageJson')
       .mockImplementationOnce(async () => {
-        throw new Error('Not found root package.json');
+        throw new Error(MOCK_ERROR_MESSAGE);
       });
 
-    await expect(async () => {
-      await getNewVersion({ versionType: VERSION_TYPE.PATCH });
-    }).rejects.toThrowError('Not found root package.json');
+    await expect(
+      getNewVersion({ versionType: VERSION_TYPE.PATCH }),
+    ).rejects.toThrow(MOCK_ERROR_MESSAGE);
   });
 });

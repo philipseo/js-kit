@@ -3,15 +3,20 @@ import { generateChangelogContent } from '#/bin/versioning/utils/upsert-change-l
 import type { GenerateChangeLogContentProps } from '#/bin/versioning/utils/upsert-change-log/utils';
 import { DEFAULT_CONTENT } from '#/bin/versioning/utils/upsert-change-log/utils/generate-change-log-content/generate-change-log-content.constants';
 import { getChangeLogContent } from '#/bin/versioning/utils/upsert-change-log/utils/generate-change-log-content/utils';
+import {
+  MOCK_GITHUB_OWNER,
+  MOCK_GITHUB_PR_NUMBER,
+  MOCK_GITHUB_REPO,
+} from '#/constants';
 
 type GetMockContentProps = Pick<GenerateChangeLogContentProps, 'isBump'>;
 
 const MOCK_PROPS = {
   isBump: true,
   versionType: VERSION_TYPE.PATCH,
-  owner: 'owner',
-  repo: 'repo',
-  prNumber: 123,
+  owner: MOCK_GITHUB_OWNER,
+  repo: MOCK_GITHUB_REPO,
+  prNumber: MOCK_GITHUB_PR_NUMBER,
   prTitle: 'test: Test Pull Request Title',
 };
 

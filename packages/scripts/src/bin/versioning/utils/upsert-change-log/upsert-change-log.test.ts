@@ -3,13 +3,16 @@ import fsPromises from 'node:fs/promises';
 
 import { upsertChangeLog } from '#/bin/versioning/utils';
 import { generateChangelogContent } from '#/bin/versioning/utils/upsert-change-log/utils';
+import {
+  MOCK_ERROR_MESSAGE,
+  MOCK_GITHUB_OWNER,
+  MOCK_GITHUB_PR_NUMBER,
+  MOCK_GITHUB_REPO,
+  MOCK_PATH,
+  MOCK_VERSION,
+} from '#/constants';
 import { getRootPath } from '#/utils';
 
-const MOCK_PATH = '/mock/root/path/package';
-const MOCK_NEW_VERSION = '1.2.3';
-const MOCK_OWNER = 'testOwner';
-const MOCK_REPO = 'testRepo';
-const MOCK_PR_NUMBER = 123;
 const MOCK_PR_INFO = {
   changedFiles: ['/mock/root/path/package/file.js'],
   prTitle: 'feat: Add new feature',
@@ -53,11 +56,11 @@ describe('upsertChangeLog', () => {
 
     await upsertChangeLog({
       path: MOCK_PATH,
-      newVersion: MOCK_NEW_VERSION,
+      newVersion: MOCK_VERSION,
       prInfo: MOCK_PR_INFO,
-      owner: MOCK_OWNER,
-      repo: MOCK_REPO,
-      prNumber: MOCK_PR_NUMBER,
+      owner: MOCK_GITHUB_OWNER,
+      repo: MOCK_GITHUB_REPO,
+      prNumber: MOCK_GITHUB_PR_NUMBER,
     });
 
     expect(getRootPath).toHaveBeenCalled();
@@ -68,14 +71,14 @@ describe('upsertChangeLog', () => {
     );
     expect(generateChangelogContent).toHaveBeenCalledWith({
       isBump: false,
-      owner: MOCK_OWNER,
-      repo: MOCK_REPO,
-      prNumber: MOCK_PR_NUMBER,
+      owner: MOCK_GITHUB_OWNER,
+      repo: MOCK_GITHUB_REPO,
+      prNumber: MOCK_GITHUB_PR_NUMBER,
       prTitle: MOCK_PR_INFO.prTitle,
     });
     expect(fsPromises.writeFile).toHaveBeenCalledWith(
       `${MOCK_PATH}/CHANGELOG.md`,
-      `# v${MOCK_NEW_VERSION} (${new Date().toLocaleDateString()})\n${MOCK_CHANGE_LOG_CONTENT}\n\n---\n\n`,
+      `# v${MOCK_VERSION} (${new Date().toLocaleDateString()})\n${MOCK_CHANGE_LOG_CONTENT}\n\n---\n\n`,
     );
 
     spyExistsSync.mockRestore();
@@ -90,11 +93,11 @@ describe('upsertChangeLog', () => {
 
     await upsertChangeLog({
       path: MOCK_PATH,
-      newVersion: MOCK_NEW_VERSION,
+      newVersion: MOCK_VERSION,
       prInfo: MOCK_PR_INFO,
-      owner: MOCK_OWNER,
-      repo: MOCK_REPO,
-      prNumber: MOCK_PR_NUMBER,
+      owner: MOCK_GITHUB_OWNER,
+      repo: MOCK_GITHUB_REPO,
+      prNumber: MOCK_GITHUB_PR_NUMBER,
     });
 
     // Check if functions are called with the correct arguments
@@ -102,14 +105,14 @@ describe('upsertChangeLog', () => {
     expect(fs.existsSync).toHaveBeenCalledWith(`${MOCK_PATH}/CHANGELOG.md`);
     expect(generateChangelogContent).toHaveBeenCalledWith({
       isBump: false,
-      owner: MOCK_OWNER,
-      repo: MOCK_REPO,
-      prNumber: MOCK_PR_NUMBER,
+      owner: MOCK_GITHUB_OWNER,
+      repo: MOCK_GITHUB_REPO,
+      prNumber: MOCK_GITHUB_PR_NUMBER,
       prTitle: MOCK_PR_INFO.prTitle,
     });
     expect(fsPromises.writeFile).toHaveBeenCalledWith(
       `${MOCK_PATH}/CHANGELOG.md`,
-      `# v${MOCK_NEW_VERSION} (${new Date().toLocaleDateString()})\n${MOCK_CHANGE_LOG_CONTENT}`,
+      `# v${MOCK_VERSION} (${new Date().toLocaleDateString()})\n${MOCK_CHANGE_LOG_CONTENT}`,
     );
 
     spyExistsSync.mockRestore();
@@ -118,33 +121,33 @@ describe('upsertChangeLog', () => {
   test('❗ Has an error upsert CHANGELOG.md', async () => {
     const spyExistsSync = jest
       .spyOn(fs, 'existsSync')
-      .mockImplementation(() => {
+      .mockImplementationOnce(() => {
         return false;
       });
     const spyWriteFile = jest
       .spyOn(fsPromises, 'writeFile')
       .mockImplementationOnce(async () => {
-        throw new Error('Mocked writeFile error');
+        throw new Error(MOCK_ERROR_MESSAGE);
       });
 
-    await expect(async () => {
-      await upsertChangeLog({
+    await expect(
+      upsertChangeLog({
         path: MOCK_PATH,
-        newVersion: MOCK_NEW_VERSION,
+        newVersion: MOCK_VERSION,
         prInfo: MOCK_PR_INFO,
-        owner: MOCK_OWNER,
-        repo: MOCK_REPO,
-        prNumber: MOCK_PR_NUMBER,
-      });
-    }).rejects.toThrow('Mocked writeFile error');
+        owner: MOCK_GITHUB_OWNER,
+        repo: MOCK_GITHUB_REPO,
+        prNumber: MOCK_GITHUB_PR_NUMBER,
+      }),
+    ).rejects.toThrow(MOCK_ERROR_MESSAGE);
 
     expect(getRootPath).toHaveBeenCalled();
     expect(fs.existsSync).toHaveBeenCalledWith(`${MOCK_PATH}/CHANGELOG.md`);
     expect(generateChangelogContent).toHaveBeenCalledWith({
       isBump: false,
-      owner: MOCK_OWNER,
-      repo: MOCK_REPO,
-      prNumber: MOCK_PR_NUMBER,
+      owner: MOCK_GITHUB_OWNER,
+      repo: MOCK_GITHUB_REPO,
+      prNumber: MOCK_GITHUB_PR_NUMBER,
       prTitle: MOCK_PR_INFO.prTitle,
     });
 

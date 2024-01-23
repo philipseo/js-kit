@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 
 import { getPackageJson } from '#/bin/versioning/utils';
+import { MOCK_ERROR_MESSAGE } from '#/constants';
 import { getRootPath } from '#/utils';
 
 describe('getPackageJsonPath function', () => {
@@ -15,11 +16,11 @@ describe('getPackageJsonPath function', () => {
 
   test('❗ Has an error get package.json path', async () => {
     jest.spyOn(fs, 'readFile').mockImplementationOnce(() => {
-      throw new Error('File Not Found');
+      throw new Error(MOCK_ERROR_MESSAGE);
     });
 
-    await expect(async () => {
-      await getPackageJson({ path: '' });
-    }).rejects.toThrowError('File Not Found');
+    await expect(getPackageJson({ path: '' })).rejects.toThrow(
+      MOCK_ERROR_MESSAGE,
+    );
   });
 });

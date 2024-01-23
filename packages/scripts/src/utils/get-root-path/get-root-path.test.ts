@@ -17,6 +17,6 @@ describe('getRootPath', () => {
       return '/';
     });
 
-    await expect(getRootPath).rejects.toThrowError('Unable to find root path');
+    await expect(getRootPath).rejects.toThrow('Unable to find root path');
   });
 });

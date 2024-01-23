@@ -1,6 +1,6 @@
-import { getPackageJson, VERSION_TYPE } from '#/bin/versioning/utils';
+import { VERSION_TYPE } from '#/bin/versioning/utils';
 import type { VersionType } from '#/bin/versioning/utils';
-import { getRootPath } from '#/utils';
+import { getRootPackageJsonVersion } from '#/utils';
 
 interface GetNewVersionProps {
   versionType: VersionType;
@@ -8,12 +8,8 @@ interface GetNewVersionProps {
 
 async function getNewVersion({ versionType }: GetNewVersionProps) {
   try {
-    const rootPath = await getRootPath();
-    const rootPackageJson = await getPackageJson({
-      path: `${rootPath}/package.json`,
-    });
-    const currentVersion = rootPackageJson.version;
-    const currentVersionSegments = currentVersion.split('.');
+    const rootPackageJsonVersion = await getRootPackageJsonVersion();
+    const currentVersionSegments = rootPackageJsonVersion.split('.');
 
     switch (versionType) {
       case VERSION_TYPE.MAJOR:

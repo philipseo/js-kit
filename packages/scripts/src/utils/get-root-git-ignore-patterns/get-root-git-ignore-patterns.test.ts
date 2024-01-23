@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 
+import { MOCK_ERROR_MESSAGE } from '#/constants';
 import { getRootGitIgnorePatterns } from '#/utils';
 
 describe('getRootGitIgnorePatterns function', () => {
@@ -11,11 +12,9 @@ describe('getRootGitIgnorePatterns function', () => {
 
   test('❗Has an Error get root git ignore patterns ', async () => {
     jest.spyOn(fs, 'readFile').mockImplementationOnce(() => {
-      throw new Error('File Not Found');
+      throw new Error(MOCK_ERROR_MESSAGE);
     });
 
-    await expect(getRootGitIgnorePatterns).rejects.toThrowError(
-      'File Not Found',
-    );
+    await expect(getRootGitIgnorePatterns).rejects.toThrow(MOCK_ERROR_MESSAGE);
   });
 });

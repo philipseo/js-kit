@@ -1,4 +1,5 @@
 import { getAllPackageJsonPaths } from '#/bin/versioning/utils';
+import { MOCK_ERROR_MESSAGE } from '#/constants';
 import * as utils from '#/utils';
 
 describe('getAllPackageJsonPaths', () => {
@@ -12,10 +13,8 @@ describe('getAllPackageJsonPaths', () => {
 
   test('❗ Has an error get all package json paths', async () => {
     jest.spyOn(utils, 'getRootPath').mockImplementationOnce(async () => {
-      throw new Error('Not found root path');
+      throw new Error(MOCK_ERROR_MESSAGE);
     });
-    await expect(getAllPackageJsonPaths()).rejects.toThrowError(
-      'Not found root path',
-    );
+    await expect(getAllPackageJsonPaths()).rejects.toThrow(MOCK_ERROR_MESSAGE);
   });
 });
