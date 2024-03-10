@@ -1,10 +1,7 @@
 {
   "extends": "./base.json",
-  "display": "Library",
+  "display": "Node",
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "dist",
     "moduleResolution": "NodeNext",
     "module": "NodeNext"
   }
