@@ -6,4 +6,5 @@ module.exports = {
   modulePathIgnorePatterns: ['/node_modules', '/dist'],
   transformIgnorePatterns: ['/node_modules/(?!(ansi-regex)/)'],
   coverageReporters: ['json', 'text'],
+  changedSince: 'origin/main',
 };
