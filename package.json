@@ -14,7 +14,7 @@
     "url": "https://github.com/philipseo/js-kit"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "purge-deps": "npx purge-deps",
     "lint-staged": "lint-staged",
     "tsc": "turbo run tsc",
