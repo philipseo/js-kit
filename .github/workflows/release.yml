@@ -11,6 +11,6 @@ on:
 
 jobs:
   build:
-    uses: philipseo/actions/.github/workflows/reusable/pnpm-build.yml@main
+    uses: philipseo/actions/.github/workflows/pnpm-build.yml@main
     with:
       pnpm-version: 9.11.0
