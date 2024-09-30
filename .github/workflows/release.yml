@@ -8,7 +8,7 @@ on:
       - synchronize
     branches:
       - main
-
+#
 jobs:
   build:
     uses: philipseo/actions/.github/workflows/pnpm-build.yml@main
