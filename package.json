@@ -15,8 +15,8 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "purge-deps": "npx purge-deps",
     "lint-staged": "lint-staged",
-    "clean-dependencies": "turbo run clean",
     "tsc": "turbo run tsc",
     "stylelint": "turbo run stylelint",
     "eslint": "turbo run eslint",
@@ -28,6 +28,7 @@
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
     "test:coverage-merge": "pnpm test:coverage && rm -rf .nyc_output && ts-node scripts/merge-jest-coverage/index.ts",
+    "build": "turbo run build",
     "release": "turbo run release"
   },
   "devDependencies": {
