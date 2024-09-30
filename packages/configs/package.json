@@ -1,6 +1,11 @@
 {
   "name": "@philipseo/configs",
   "version": "0.0.0",
+  "engines": {
+    "node": "20.x",
+    "pnpm": "9.x"
+  },
+  "packageManager": "pnpm@9.11.0",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
   "homepage": "https://github.com/philipseo/js-kit",
@@ -8,10 +13,6 @@
     "type": "git",
     "url": "https://github.com/philipseo/js-kit",
     "directory": "configs"
-  },
-  "engins": {
-    "node": "20.x",
-    "pnpm": "8.x"
   },
   "files": [
     "eslint",
