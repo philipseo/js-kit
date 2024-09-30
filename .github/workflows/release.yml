@@ -11,6 +11,8 @@ on:
 
 jobs:
   build:
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     uses: philipseo/actions/.github/workflows/pnpm-build.yml@main
     with:
       node-version: 20
