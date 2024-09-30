@@ -1,0 +1,19 @@
+name: release
+
+on:
+  #  push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+
+jobs:
+  build:
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: philipseo/actions/.github/workflows/pnpm-build.yml@main
+    with:
+      node-version: 20
+      pnpm-version: 9.11.0
