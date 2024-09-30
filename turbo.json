@@ -1,9 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
+    },
+    "clean-dependencies": {
+      "outputs": []
     },
     "tsc": {
       "outputs": []
@@ -25,12 +28,6 @@
     },
     "lint:fix": {
       "outputs": []
-    },
-    "test": {
-      "outputs": []
-    },
-    "test:coverage": {
-      "outputs": ["coverage/**"]
     },
     "release": {
       "outputs": []

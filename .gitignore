@@ -1,26 +1,12 @@
 ### OS ###
-.DS_*/
+.DS_*
 
 ### IDE ###
 ### Jetbrains ###
-.idea/
+.idea
 
 ### Dependencies ###
-node_modules/
-
-### Testing ###
-coverage/
-.nyc_output
-
-### Outputs ###
-dist/
-build/
-
-### Documents ###
-apps/documents/.docusaurus
-apps/documents/.cache-loader
-### Documents - GenerateFiles ###
-apps/documents/docs
+node_modules
 
 ### Turbo ###
 .turbo

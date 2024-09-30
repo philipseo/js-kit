@@ -1,0 +1,20 @@
+name: release
+
+on:
+  #  push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on:
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Install node, pnpm and dependencies
+          uses: philipseo/actions/actions/reusable-workflows/pnpm-build@main
