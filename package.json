@@ -9,8 +9,8 @@
     "url": "https://github.com/philipseo/js-kit"
   },
   "engins": {
-    "node": "20.x",
-    "pnpm": "8.x"
+    "node": "22.x",
+    "pnpm": "10.x"
   },
   "scripts": {
     "prepare": "husky install",
@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "@philipseo/configs": "workspace:*",
-    "turbo": "1.12.5"
+    "turbo": "2.5.2"
   }
 }

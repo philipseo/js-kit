@@ -1,6 +1,14 @@
 /** @type {import("prettier").Config} */
 const config = {
   plugins: [require.resolve('@ianvs/prettier-plugin-sort-imports')],
+  arrowParens: 'always',
+  bracketSpacing: true,
+  htmlWhitespaceSensitivity: 'css',
+  insertPragma: false,
+  bracketSameLine: false,
+  proseWrap: 'always',
+  quoteProps: 'as-needed',
+  requirePragma: false,
   useTabs: false,
   semi: true,
   singleQuote: true,
@@ -8,7 +16,6 @@ const config = {
   tabWidth: 2,
   trailingComma: 'all',
   endOfLine: 'lf',
-  arrowParens: 'always',
   importOrder: [
     '<BUILTIN_MODULES>',
     '',
