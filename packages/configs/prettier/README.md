@@ -1,9 +1,17 @@
-# prettier
+## 📦 Available Prettier Configurations
 
-## Usage
+This package provides multiple Prettier configuration presets:
 
-```javascript
-const baseConfig = require('@philipseo/configs/prettier/base');
+- `base` (`index.js`)  
+  Basic Prettier rules. This is the default export when you import from the
+  package root.
 
-module.exports = baseConfig;
+---
+
+## 🔧 Usage
+
+```js
+import prettier from '@philipseo/configs/prettier';
+
+export default prettier;
 ```

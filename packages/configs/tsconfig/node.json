@@ -1,8 +1,0 @@
-{
-  "extends": "./base.json",
-  "display": "Node",
-  "compilerOptions": {
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext"
-  }
-}

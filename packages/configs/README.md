@@ -21,3 +21,7 @@ yarn add -D @philipseo/configs
 # pnpm
 pnpm add -D @philipseo/configs
 ```
+
+## Usage
+
+Refer to the README of each configuration for usage instructions.
