@@ -1,6 +1,6 @@
 {
   "name": "@philipseo/configs",
-  "version": "0.0.19",
+  "version": "0.0.25",
   "type": "module",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
@@ -24,22 +24,46 @@
   ],
   "exports": {
     "./eslint/*": "./eslint/*.js",
-    "./prettier/*": "./prettier/*.js",
-    "./tsconfig/*": "./tsconfig/*.json"
+    "./prettier/*": "./prettier/*.js"
   },
   "scripts": {
     "release": "pnpm publish --no-git-checks"
   },
-  "dependencies": {
-    "@eslint/js": "9.26.0",
+  "devDependencies": {
+    "@eslint/js": "9.28.0",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
-    "eslint-plugin-prettier": "5.4.0",
-    "globals": "16.1.0",
-    "typescript-eslint": "8.32.0"
+    "eslint": "9.28.0",
+    "eslint-plugin-prettier": "5.4.1",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-refresh": "0.4.20",
+    "globals": "16.2.0",
+    "prettier": "3.5.3",
+    "typescript-eslint": "8.33.1"
   },
   "peerDependencies": {
-    "eslint": ">=9",
-    "prettier": ">=3",
-    "typescript": ">=5"
+    "@eslint/js": "^9.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@trivago/prettier-plugin-sort-imports": {
+      "optional": true
+    },
+    "globals": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-react-refresh": {
+      "optional": true
+    }
   }
 }
