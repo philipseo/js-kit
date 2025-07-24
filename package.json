@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "@philipseo/configs": "workspace:*",
-    "turbo": "2.5.3"
+    "turbo": "2.5.5"
   }
 }

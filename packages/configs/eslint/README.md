@@ -16,8 +16,45 @@ This package provides multiple ESLint configuration presets:
 
 ## 🔧 Usage
 
+Install peer dependencies first.
+
+```bash
+pnpm add -D @eslint/js eslint eslint-config-prettier prettier typescript-eslint
+```
+
+### Base
+
 ```js
 import baseConfig from '@philipseo/configs/eslint/base';
 
 export default baseConfig;
 ```
+
+### Nest
+
+Install peer dependencies first.
+
+```bash
+pnpm add -D globals
+```
+
+```js
+import nestConfig from '@philipseo/configs/eslint/nest';
+
+export default nestConfig;
+```
+
+### React
+
+Install peer dependencies first.
+
+```bash
+pnpm add -D @trivago/prettier-plugin-sort-imports globals eslint-plugin-react-hooks eslint-plugin-react-refresh
+```
+
+```js
+import reactConfig from '@philipseo/configs/eslint/react';
+
+export default reactConfig;
+```
+
