@@ -1,27 +1,17 @@
 # @philipseo/configs
 
-- eslint
-- jest
-- lint-staged
-- prettier
-- stylelint
-- tsconfig
-
-[referenced by vercel/style-guide](https://github.com/vercel/style-guide)
+Shared ESLint, Prettier, and TypeScript configs.
 
 ## Install
 
-```
-# npm
-npm install -D @philipseo/configs
-
-# yarn
-yarn add -D @philipseo/configs
-
-# pnpm
-pnpm add -D @philipseo/configs
+```bash
+pnpm add -D @philipseo/configs eslint prettier typescript
 ```
 
 ## Usage
 
-Refer to the README of each configuration for usage instructions.
+See the README in each folder:
+
+- [eslint](./eslint/README.md)
+- [prettier](./prettier/README.md)
+- [tsconfig](./tsconfig/README.md)

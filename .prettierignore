@@ -1,33 +1,11 @@
-### OS ###
-.DS_*/
-
-### IDE ###
-### Jetbrains ###
-.idea/
-
-### Dependencies ###
 node_modules/
-pnpm-lock.yaml
-
-### Husky ###
-.husky/
-
-### Testing ###
-coverage/
-
-### Outputs ###
-dist/
-
-### Documents ###
-.docusaurus/
-.cache-loader/
-### Documents - GenerateFiles ###
-docs/
-
-### Turbo ###
-.turbo
-
-### Etc ###
-*.log
-.github/**/*.md
+.pnpm-store/
 **/CHANGELOG.md
+pnpm-lock.yaml
+coverage/
+.nyc_output
+dist/
+build/
+.turbo
+*.log
+.husky/

@@ -1,39 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
-    },
-    "tsc": {
-      "outputs": []
-    },
-    "eslint": {
-      "outputs": []
-    },
-    "eslint:fix": {
-      "outputs": []
-    },
-    "prettier": {
-      "outputs": []
-    },
-    "prettier:fix": {
-      "outputs": []
-    },
-    "lint": {
-      "outputs": []
-    },
-    "lint:fix": {
-      "outputs": []
-    },
-    "test": {
-      "outputs": []
-    },
-    "test:coverage": {
-      "outputs": ["coverage/**"]
-    },
-    "release": {
-      "outputs": []
     }
   }
 }

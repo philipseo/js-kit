@@ -2,7 +2,6 @@
 .DS_*/
 
 ### IDE ###
-### Jetbrains ###
 .idea/
 
 ### Dependencies ###
@@ -16,12 +15,6 @@ coverage/
 ### Outputs ###
 dist/
 build/
-
-### Documents ###
-apps/documents/.docusaurus
-apps/documents/.cache-loader
-### Documents - GenerateFiles ###
-apps/documents/docs
 
 ### Turbo ###
 .turbo

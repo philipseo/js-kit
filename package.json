@@ -15,24 +15,25 @@
     "node": ">=24"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint-staged": "lint-staged",
     "build": "turbo run build --no-daemon",
-    "tsc": "turbo run tsc",
-    "stylelint": "turbo run stylelint",
-    "eslint": "turbo run eslint",
-    "eslint:fix": "turbo run eslint:fix",
-    "prettier": "turbo run prettier",
-    "prettier:fix": "turbo run prettier:fix",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
-    "test": "turbo run test",
-    "test:coverage": "turbo run test:coverage",
-    "test:coverage-merge": "pnpm test:coverage && rm -rf .nyc_output && ts-node scripts/merge-jest-coverage/index.ts",
-    "release": "turbo run release"
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint": "pnpm eslint && pnpm prettier",
+    "lint:fix": "pnpm eslint:fix && pnpm prettier:fix",
+    "changeset": "changeset"
   },
   "devDependencies": {
+    "@changesets/cli": "2.31.1",
     "@philipseo/configs": "workspace:*",
-    "turbo": "2.10.9"
+    "eslint": "10.8.1",
+    "husky": "9.1.7",
+    "lint-staged": "17.3.0",
+    "prettier": "3.9.6",
+    "turbo": "2.10.9",
+    "typescript": "6.0.3"
   }
 }

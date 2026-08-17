@@ -1,3 +1,5 @@
+import sortImports from '@trivago/prettier-plugin-sort-imports';
+
 /** @type {import("prettier").Config} */
 const config = {
   arrowParens: 'always',
@@ -15,7 +17,7 @@ const config = {
   tabWidth: 2,
   trailingComma: 'all',
   endOfLine: 'lf',
-  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  plugins: [sortImports],
   importOrder: ['^nestjs', '^react', '^next', '<THIRD_PARTY_MODULES>', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,

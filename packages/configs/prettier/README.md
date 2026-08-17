@@ -1,19 +1,8 @@
-## 📦 Available Prettier Configurations
+## Prettier preset
 
-This package provides a single Prettier preset. Import sorting via
-`@trivago/prettier-plugin-sort-imports` is included.
+`base` includes `@trivago/prettier-plugin-sort-imports`.
 
-- `base` (`base.js`)
-
----
-
-## 🔧 Usage
-
-Install peer dependencies first.
-
-```bash
-pnpm add -D prettier @trivago/prettier-plugin-sort-imports
-```
+Peer dependency: `prettier`.
 
 ```js
 import baseConfig from '@philipseo/configs/prettier/base';

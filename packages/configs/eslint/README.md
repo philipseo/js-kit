@@ -1,55 +1,18 @@
-## 📦 Available ESLint Configurations
+## ESLint presets
 
-This package provides multiple ESLint configuration presets:
+- `base` — ESLint recommended + typescript-eslint recommended + prettier
+- `react` — `base` plus React hooks and React Refresh (Vite)
+- `nest` — `base` plus Node and Jest globals
 
-- `base` (`eslint/base.js`)  
-  Basic ESLint rules. This is the default export when you import from the
-  package root.
-
-- `nest` (`eslint/nest.js`)  
-  Extends the `base` config with additional rules for NestJS projects.
-
-- `react` (`eslint/react.js`)  
-  Extends the `base` config with additional rules for React projects.
-
----
-
-## 🔧 Usage
-
-Install peer dependencies first.
-
-```bash
-pnpm add -D @eslint/js eslint eslint-config-prettier prettier typescript-eslint
-```
-
-### Base
+Peer dependencies: `eslint`, `prettier`, `typescript`.
 
 ```js
 import baseConfig from '@philipseo/configs/eslint/base';
+import { defineConfig } from 'eslint/config';
 
-export default baseConfig;
-```
-
-### Nest
-
-Install peer dependencies first.
-
-```bash
-pnpm add -D globals
-```
-
-```js
-import nestConfig from '@philipseo/configs/eslint/nest';
-
-export default nestConfig;
-```
-
-### React
-
-Install peer dependencies first.
-
-```bash
-pnpm add -D @trivago/prettier-plugin-sort-imports globals eslint-plugin-react-hooks eslint-plugin-react-refresh
+export default defineConfig({
+  extends: [baseConfig],
+});
 ```
 
 ```js
@@ -58,3 +21,8 @@ import reactConfig from '@philipseo/configs/eslint/react';
 export default reactConfig;
 ```
 
+```js
+import nestConfig from '@philipseo/configs/eslint/nest';
+
+export default nestConfig;
+```

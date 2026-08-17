@@ -1,17 +1,23 @@
-## 📦 Available TSConfig Configurations
+## TSConfig presets
 
-This package provides multiple TSConfig configuration presets:
-
-- `base` (`tsconfig/base.json`)  
-  Basic TSConfig rules. This is the default export when you import from the
-  package root.
-
----
-
-## 🔧 Usage
+- `base` — no DOM, `moduleResolution: bundler`
+- `dom` — `base` plus DOM libs
+- `node` — `base` with `module` / `moduleResolution: nodenext`
 
 ```json
 {
-  "extends": "@philipseo/configs/tsconfig"
+  "extends": "@philipseo/configs/tsconfig/base.json"
+}
+```
+
+```json
+{
+  "extends": "@philipseo/configs/tsconfig/dom.json"
+}
+```
+
+```json
+{
+  "extends": "@philipseo/configs/tsconfig/node.json"
 }
 ```
