@@ -9,7 +9,6 @@ export default defineConfig([
       'build/**',
       'coverage/**',
       '.pnpm-store/**',
-      '.turbo/**',
     ],
   },
   {

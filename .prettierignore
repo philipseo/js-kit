@@ -6,6 +6,5 @@ coverage/
 .nyc_output
 dist/
 build/
-.turbo
 *.log
 .husky/

@@ -22,6 +22,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile --ignore-scripts
 
+      # npm Trusted Publishing (OIDC) must be configured for @philipseo/configs:
+      # npmjs.com → package settings → Trusted Publisher → workflow filename `release.yml`
       - name: Version and publish
         env:
           HUSKY: 0
@@ -38,5 +40,6 @@ jobs:
             git commit -m "chore: version packages"
           fi
 
+          npm --version
           pnpm changeset publish
           git push --follow-tags

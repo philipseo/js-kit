@@ -7,6 +7,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "target": "ESNext",
@@ -15,6 +16,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "exclude": ["node_modules", "dist"]
+  }
 }

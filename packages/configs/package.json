@@ -13,9 +13,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "engines": {
-    "node": ">=24"
-  },
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -33,7 +30,7 @@
     "./eslint/nest": "./eslint/nest.js",
     "./prettier/base": "./prettier/base.js",
     "./tsconfig/base.json": "./tsconfig/base.json",
-    "./tsconfig/dom.json": "./tsconfig/dom.json",
+    "./tsconfig/react.json": "./tsconfig/react.json",
     "./tsconfig/node.json": "./tsconfig/node.json"
   },
   "dependencies": {

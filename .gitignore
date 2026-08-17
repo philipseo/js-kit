@@ -16,9 +16,6 @@ coverage/
 dist/
 build/
 
-### Turbo ###
-.turbo
-
 ### Etc ###
 *.log
 .npmrc
