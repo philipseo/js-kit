@@ -15,6 +15,10 @@ const config = {
   tabWidth: 2,
   trailingComma: 'all',
   endOfLine: 'lf',
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  importOrder: ['^nestjs', '^react', '^next', '<THIRD_PARTY_MODULES>', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
 };
 
 export default config;

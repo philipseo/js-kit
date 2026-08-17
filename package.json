@@ -1,6 +1,7 @@
 {
   "name": "@philipseo/js-kit",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "license": "MIT",
   "author": "Philip Seo <hbnb7894@gmail.com>",
@@ -9,9 +10,9 @@
     "type": "git",
     "url": "https://github.com/philipseo/js-kit"
   },
+  "packageManager": "pnpm@11.22.0",
   "engines": {
-    "node": ">=22",
-    "pnpm": ">=10"
+    "node": ">=24"
   },
   "scripts": {
     "prepare": "husky install",
@@ -32,6 +33,6 @@
   },
   "devDependencies": {
     "@philipseo/configs": "workspace:*",
-    "turbo": "2.5.5"
+    "turbo": "2.10.9"
   }
 }
