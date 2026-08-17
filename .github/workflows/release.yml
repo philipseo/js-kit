@@ -10,6 +10,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment: npm
     steps:
       - uses: actions/checkout@v7
         with:
@@ -20,11 +21,14 @@ jobs:
           runtime: node@24
           install: false
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
       - run: pnpm install --frozen-lockfile --ignore-scripts
 
-      # npm Trusted Publishing (OIDC) must be configured for @philipseo/configs:
-      # npmjs.com → package settings → Trusted Publisher → workflow filename `release.yml`
-      - name: Version and publish
+      - name: Version packages
         env:
           HUSKY: 0
         run: |
@@ -36,10 +40,18 @@ jobs:
           git add -A
           if git diff --cached --quiet; then
             echo "No version changes to commit"
-          else
-            git commit -m "chore: version packages"
+            exit 1
           fi
+          git commit -m "chore: version packages"
 
-          npm --version
-          pnpm changeset publish
+      - name: Publish to npm
+        working-directory: packages/configs
+        run: npm publish
+
+      - name: Push version commit and tag
+        env:
+          HUSKY: 0
+        run: |
+          VERSION=$(jq -r .version packages/configs/package.json)
+          git tag "@philipseo/configs@${VERSION}"
           git push --follow-tags
