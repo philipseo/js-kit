@@ -13,6 +13,8 @@ jobs:
     environment: npm
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/setup@v2
         with:
@@ -26,6 +28,22 @@ jobs:
 
       - run: pnpm install --frozen-lockfile --ignore-scripts
 
+      - name: Version packages
+        env:
+          HUSKY: 0
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          pnpm changeset version
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changesets to release"
+            exit 1
+          fi
+          git commit -m "chore: version packages"
+
       - name: Publish to npm
         working-directory: packages/configs
         run: |
@@ -36,13 +54,11 @@ jobs:
           fi
           npm publish
 
-      - name: Push git tag
+      - name: Push version commit and tag
         run: |
           VERSION=$(jq -r .version packages/configs/package.json)
           TAG="@philipseo/configs@${VERSION}"
-          if git ls-remote --exit-code origin "refs/tags/${TAG}" >/dev/null; then
-            echo "Tag ${TAG} already exists"
-            exit 0
+          if ! git ls-remote --exit-code origin "refs/tags/${TAG}" >/dev/null; then
+            git tag "$TAG"
           fi
-          git tag "$TAG"
-          git push origin "refs/tags/${TAG}"
+          git push --follow-tags origin HEAD:main
